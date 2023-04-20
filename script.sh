@@ -35,5 +35,6 @@ for url in $urls; do
 
   # Move temp files to the cruft directory
   mv package "${cruft_filename}_dir"
+  echo "$url" >> loaded.txt
 
 done
