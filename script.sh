@@ -26,7 +26,7 @@ for url in $urls; do
   # npm publish the package
   # NOTE: This command might require authentication or additional options
   cd package
-  npm publish
+  #npm publish
   cd ..
 
   # Encode the guid URL in a more readable way
