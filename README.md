@@ -11,7 +11,7 @@ create table allvs as (SELECT * FROM read_ndjson_auto('allvs.ndjson', maximum_ob
 create table vs as (
 select r1.* from allvs r1 join (
   select  max(id) as id, url, max(version) as version from allvs r2 group by url) r2
-on r1.id=r2.id and r1.version=r2.version
+on r1.url=r2.url and r1.version=r2.version
 );
 
 select system, count(*) from (select unnest(r.compose.include).system from vs) group by s order by 2 desc limit 100;
